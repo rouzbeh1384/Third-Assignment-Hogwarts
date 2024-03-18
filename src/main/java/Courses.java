@@ -3,16 +3,18 @@ import java.util.ArrayList;
 public class Courses {
 
     //Array of student in class
-    ArrayList<String> Student ;
+    ArrayList<Student> Student ;
     //Name of Teacher
-    String Teacher;
+    Teacher teacher;
 
     String Time ;
 
-    //Constructor
-     public Courses(Teacher teacher) {
-        this.Teacher=teacher.getName();
+    private String Name;
 
+    //Constructor
+     public Courses(Teacher teacher,String Name) {
+        this.teacher=teacher;
+        this.Name=Name;
     }
     public Courses() {
 
@@ -26,12 +28,18 @@ public class Courses {
         return this.Time;
     }
     public void AddStudent(Student student) {
-         this.Student.add(student.getName());
-
+         this.Student.add(student);
     }
 
-    public void SetTeacher(String Name ){
-         this.Teacher=Name;
+    public void SetTeacher(Teacher teacher){
+         this.teacher=teacher;
     }
+
+
+    /**
+     * return Name of courses
+     * @return
+     */
+    public String getName() {return this.Name;}
 
 }

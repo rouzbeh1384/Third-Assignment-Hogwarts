@@ -10,20 +10,29 @@ public class Student extends Account{
 
     String Name ;
 
+    String LastName;
+
 
 
     //Constructor
-    public Student(ArrayList<Courses> courses)
+    public Student(String Name, String LastName,String username,String password)
     {
-        super();
+        super(username ,password);
+        this.Name=Name;
+        this.LastName=LastName;
+    }
+
+    public Student(ArrayList<Courses> courses,String Name, String LastName,String username,String password )
+    {
+        super(username,password);
         this.courses=new ArrayList<>();
         this.allCourses=new ArrayList<>();
-//        allCourses.replaceAll();
-
+        this.Name=Name;
+        this.LastName=LastName;
     }
 
     /**
-     * set name
+     * change name
      * @param Name
      */
     public void setName(String Name ){
@@ -55,6 +64,19 @@ public class Student extends Account{
         return this.courses;
     }
 
+    public boolean equal(String uesr,String password)
+    {
+        if (uesr.equals(super.getUsername())  & super.validatePassword(password))
+        {
+            return true;
+        }
+
+       return false;
+    }
+
+    public void setGrade(){
+
+    }
 
 
 

@@ -9,7 +9,11 @@ public class Account implements AccountManagement{
     private UUID accountID;
 
     //Constructor
-    public Account() {accountID=UUID.randomUUID();}
+    public Account(String username,String password) {
+        accountID=UUID.randomUUID();
+        this.username=username;
+        this.password=password;
+    }
 
 
     /**
@@ -19,7 +23,7 @@ public class Account implements AccountManagement{
      */
     @Override
     public boolean validatePassword(String enteredPassword) {
-        if (this.password==enteredPassword)
+        if (this.password.equals(enteredPassword))
             return true ;
         return false;
     }
@@ -33,4 +37,9 @@ public class Account implements AccountManagement{
         this.password=newPassword;
 
     }
+    public String getUsername()
+    {
+        return username;
+    }
+
 }

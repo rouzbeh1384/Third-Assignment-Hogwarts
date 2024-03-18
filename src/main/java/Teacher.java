@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Teacher {
+public class Teacher extends Account {
 
     ArrayList<Integer>Rate=new ArrayList<>();
     int Grade=0;
@@ -8,27 +8,53 @@ public class Teacher {
     ArrayList<Courses> courses;
     String NameTeacher;
     //Constructor
-    public Teacher(ArrayList<Courses>courses,String Teacher)
+    public Teacher(ArrayList<Courses>courses,String Teacher ,String usernaem ,String password)
     {
+        super(usernaem,password);
         this.courses=new ArrayList<>(courses);
         this.NameTeacher=Teacher;
     }
+    public Teacher(String Teacher,String usernaem ,String password)
+    {
+        super(usernaem,password);
+        this.NameTeacher=Teacher;
+    }
 
-    //.....
 
+
+
+    /**
+     * return name
+     *
+     */
     public String getName()
     {
         return this.NameTeacher;
     }
+
+    /**
+     * set courses
+     * @param courses
+     */
     public void GetCourse(Courses courses)
     {
-        courses.SetTeacher(this.NameTeacher);
+        this.courses.add(courses);
     }
+
+    /**
+     * get Rate
+     * @param Rate
+     */
     public void Rate(int Rate  )
     {
         this.Rate.add(Rate);
         calculateGrade();
     }
+
+
+    /**
+     * calculateGrade
+     */
     private void calculateGrade()
     {
         int a=0;
@@ -39,5 +65,19 @@ public class Teacher {
         this.Grade=a/this.Rate.size();
     }
 
-
+    public int getGrade()
+    {
+        return this.Grade;
+    }
+    public boolean equal(String userName, String password) {
+       if (this.getUsername().equals(userName))
+       {
+           if (this.validatePassword(password))
+           {
+               return true;
+           }
+           return false;
+       }
+       return false;
+    }
 }
