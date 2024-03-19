@@ -12,8 +12,9 @@ public class Student extends Account{
 
     String LastName;
 
+    ArrayList<Integer> Grade=new ArrayList<>();
 
-
+    int AvregeGrade=0;
     //Constructor
     public Student(String Name, String LastName,String username,String password)
     {
@@ -74,8 +75,39 @@ public class Student extends Account{
        return false;
     }
 
-    public void setGrade(){
+    /**
+     * this is not correct of set grade for student
+     * @param grade
+     */
+    //TODO >find better way ?
+    public void setGrade(int grade){
+        Grade.add(grade);
+    }
 
+    /**
+     * for Average Grade
+     */
+    public void calculsaGrade()
+    {
+        AvregeGrade=0;
+        for (int i=0;i<Grade.size();i++)
+        {
+            AvregeGrade+= Grade.get(i);
+        }
+        AvregeGrade/=Grade.size();
+
+    }
+    /**
+     * print grade
+     */
+    public void  printGrade()
+    {
+        if (Grade.size()!=0)
+         for (int x:this.Grade)
+             System.out.println("\t"+x);
+        else{
+            System.out.println("NO have grade ");
+        }
     }
 
 

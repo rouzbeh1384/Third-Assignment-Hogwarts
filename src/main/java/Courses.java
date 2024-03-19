@@ -12,14 +12,19 @@ public class Courses {
     private String Name;
 
     //Constructor
-     public Courses(Teacher teacher,String Name) {
-        this.teacher=teacher;
+//     public Courses(Teacher teacher,String Name) {
+//        this.teacher=teacher;
+//        this.Name=Name;
+//    }
+    public Courses(String Name,String time)
+    {
         this.Name=Name;
+        this.Time=time;
     }
     public Courses() {
 
     }
-    protected  void setTime (String Stime,String Etime){
+    public   void setTime (String Stime,String Etime){
         this.Time=Stime+"--->"+Etime;
     }
 

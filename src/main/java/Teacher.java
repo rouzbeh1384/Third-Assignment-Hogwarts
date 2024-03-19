@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Teacher extends Account {
 
     ArrayList<Integer>Rate=new ArrayList<>();
-    int Grade=0;
+    private int Grade=0;
 
     ArrayList<Courses> courses;
     String NameTeacher;
