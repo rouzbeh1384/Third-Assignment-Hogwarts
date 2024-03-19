@@ -4,9 +4,9 @@ public class Student extends Account{
 
 
 
-    ArrayList<Courses> courses;
+    ArrayList<String> courses;
+    ArrayList<String> plan;
 
-    ArrayList<Courses> allCourses;
 
     String Name ;
 
@@ -27,7 +27,7 @@ public class Student extends Account{
     {
         super(username,password);
         this.courses=new ArrayList<>();
-        this.allCourses=new ArrayList<>();
+        this.plan=new ArrayList<>();
         this.Name=Name;
         this.LastName=LastName;
     }
@@ -54,14 +54,15 @@ public class Student extends Account{
      * @param courses
      */
     public void setCourses(Courses courses) {
-        this.courses.add(courses);
+        this.courses.add(courses.getName());
+        this.plan.add(courses.Time);
     }
 
     /**
      * return courses
      * @return
      */
-    public ArrayList<Courses> getCourses() {
+    public ArrayList<String> getCourses() {
         return this.courses;
     }
 

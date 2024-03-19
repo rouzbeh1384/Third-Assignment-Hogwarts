@@ -179,11 +179,14 @@ public class Main {
                     for (Courses x : courses) {
 
                         conter++;
-                        System.out.format("%d - %s", conter, x.getName());
+                        System.out.format("%d - %s\n\n", conter, x.getName());
                     }
                     int NumberCourses = get.nextInt();
                     try {
-                        rouzbeh.student.get(i).setCourses(rouzbeh.courses.get(NumberCourses));
+//                        rouzbeh.student.get(i).setCourses(courses.get(NumberCourses-1));
+                        Courses courses1=new Courses();
+                        courses1=courses.get(NumberCourses-1);
+                        rouzbeh.student.get(i).setCourses(courses1);
                         System.out.println(" successful ");
                     }
                     catch (Exception e) {System.out.println("Not successful ");}
@@ -202,7 +205,7 @@ public class Main {
                 for (Courses x : rouzbeh.courses) {
                     conter = 0;
                     conter++;
-                    System.out.format("%d - %s", conter, x.getName());
+                    System.out.format("\n%d - %s\n", conter, x.getName());
                 }
             }
             break;
@@ -255,6 +258,7 @@ public class Main {
                     System.out.println("Not successful ");
                 }
             }
+            break;
 
             case 8:
                 runMenu(rouzbeh);
@@ -342,9 +346,10 @@ public class Main {
                     conter++;
                     System.out.format("%d -> %s\n", conter, x.getName());
                 }
+                System.out.println("\n");
                 break;
                 case 2:
-                    System.out.println("list of Teacher in School with grade: ");
+                    System.out.println("list of Teacher in School with grade: \n");
                     conter = 0;
                     for (Teacher x : hogwarts.teacher) {
                         conter++;
@@ -481,6 +486,52 @@ public class Main {
                     System.out.println("Not successful  ");
                 }
                 break;
+
+            case 9:
+            {
+
+            }
+            break;
+            case 10:
+            {
+                System.out.println("enter last password ");
+
+                String pass = scanner.next();
+                try {
+                    if (hogwarts.student.get(i).validatePassword(pass)) {
+                        String newpass = scanner.next();
+                        hogwarts.student.get(i).changePassword(newpass);
+                        System.out.println("\nSuccessful");
+                    }
+                }catch (Exception e)
+                {
+                    System.out.println("\nNot Successful");
+                }
+            }
+            break;
+            case 11:
+            {
+                System.out.println("enter  password ");
+                String pass = scanner.next();
+                try {
+                    if (hogwarts.student.get(i).validatePassword(pass)) {
+                        System.out.println("enter new user name ");
+                        //TODO chcek ues name is unique
+                        String newusername = scanner.next();
+                        hogwarts.student.get(i).changeUsername(newusername);
+                        System.out.println("\nSuccessful");
+                    }
+                }catch (Exception e)
+                {
+                    System.out.println("\nNot Successful");
+                }
+            }
+            break;
+
+
+
+
+
             case 21:
                 System.out.println("successful");
                 runMenu(hogwarts);
