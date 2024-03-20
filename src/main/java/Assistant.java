@@ -10,9 +10,10 @@ public class Assistant extends  Account {
 
     ArrayList<Courses> courses;
 
+    ArrayList<String> QuestionANDans = new ArrayList<>();
 
     //Constructor
-    public Assistant(String Name, String password,ArrayList<Student> student,ArrayList<Teacher> teacher ,ArrayList<Courses> courses) {
+    public Assistant(String Name, String password, ArrayList<Student> student, ArrayList<Teacher> teacher, ArrayList<Courses> courses) {
         super(Name, password);
         this.student = new ArrayList<>(student);
         this.teacher = new ArrayList<>(teacher);
@@ -20,26 +21,23 @@ public class Assistant extends  Account {
     }
 
 
-
     //---------------------------
-    public void addStudent(String Name ,String LastName  ,String userName ,String password) {
-        Student student=new Student(Name,LastName,userName,password);
-            this.student.add(student);
+    public void addStudent(String Name, String LastName, String userName, String password) {
+        Student student = new Student(Name, LastName, userName, password);
+        this.student.add(student);
     }
 
-    public void addTeacher(String Name,String usernaem ,String password) {
-        Teacher teacher=new Teacher(Name,usernaem,password);
-            this.teacher.add(teacher);
+    public void addTeacher(String Name, String usernaem, String password) {
+        Teacher teacher = new Teacher(Name, usernaem, password);
+        this.teacher.add(teacher);
     }
 
-    public void addCourses(String Name ,String time) {
+    public void addCourses(String Name, String time) {
         try {
-            Courses courses=new Courses(Name,time);
+            Courses courses = new Courses(Name, time);
             System.out.println(courses.Time);
             this.courses.add(courses);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println("Not");
         }
 
@@ -53,8 +51,8 @@ public class Assistant extends  Account {
 
 
     }
-    public void removeCourses(Courses courses)
-    {
+
+    public void removeCourses(Courses courses) {
         String ans = JOptionPane.showInputDialog(null, "enter your password ");
         if (super.validatePassword(ans)) {
             this.courses.remove(courses);
@@ -67,11 +65,16 @@ public class Assistant extends  Account {
             System.out.print(this.student.get(i).getName());
         }
     }
-    public boolean equal(String username,String password)
-    {
-        return validatePassword(password)& getUsername().equals(username);
+
+    public boolean equal(String username, String password) {
+        return validatePassword(password) & getUsername().equals(username);
+    }
+
+    public void setQuestion(String question, String ans) {
+        this.QuestionANDans.add(question + "-->" + ans);
     }
 }
+
 
 
 

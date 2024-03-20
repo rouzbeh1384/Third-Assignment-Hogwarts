@@ -67,7 +67,7 @@ A few of the things you can do with School Managment System:
 * Remove Courses
 * See grade And GPA
 * ****change Information**** : passWord , username
-* 
+
   </div>
   <div style="flex: 50%;">
   <img src="https://img.freepik.com/free-vector/college-university-students-group-young-happy-people-standing-isolated-white-background_575670-66.jpg" width="200">
@@ -87,9 +87,6 @@ A few of the things you can do with School Managment System:
   <img src="https://img.freepik.com/free-vector/college-university-students-group-young-happy-people-standing-isolated-white-background_575670-66.jpg" width="200">
   </div>
 </div>
-
-
-
 
 
 

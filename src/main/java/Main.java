@@ -5,6 +5,8 @@
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -54,7 +56,7 @@ public class Main {
 
                             while (true) {
                                 System.out.println("1-get courses -2 see all teacher -3 see all courses\n" +
-                                        " 4-see my courses  5-removeCourses \n6- paly game  7-grade  \n\n10-   8-back menu\n\n");
+                                        " 4-see my courses  5-removeCourses \n6- paly game  7-grade And GPA 8-plan for this term  \n\n10-change passWord 11- change username    21-back menu\n\n");
                                 int b = scanner.nextInt();
                                 if (b != 5)
                                     runStudent(b,rouzbeh.courses,rouzbeh,i);
@@ -246,6 +248,37 @@ public class Main {
             //paly game and increase grade
             case 6:
             {
+                 System.out.println("you are in a game for fun please try and answer correct \nif answer correct all of question your GPA increase 0.5 point  ");
+                 System.out.println("Start");
+                 int nmber =0;
+                 try {
+
+
+                     for (int a = 0; a < rouzbeh.assistants.get(0).QuestionANDans.size(); a++) {
+                         String regex = "(.+?)-->";
+                         Pattern pattern = Pattern.compile(regex);
+                         Matcher matcher = pattern.matcher(rouzbeh.assistants.get(0).QuestionANDans.get(a));
+                         System.out.println(matcher.group());
+                         Scanner scanner = new Scanner(System.in);
+                         System.out.println("enter ans :");
+                         String ans = scanner.next();
+                         if (rouzbeh.assistants.get(0).QuestionANDans.get(a).equals(matcher.group() + ans)) {
+                             System.out.println("correct ANSEWR");
+                         }
+                         nmber++;
+                     }
+                     if (nmber == rouzbeh.assistants.get(0).QuestionANDans.size()) {
+                         {
+                             rouzbeh.student.get(i).AvregeGrade++;
+                         }
+
+                     }
+                 }catch (Exception e)
+                 {
+                     System.out.println("NOT successful");
+                 }
+
+
 
             }
             case 7:
@@ -360,6 +393,7 @@ public class Main {
             case 4:
                 System.out .format("your Grade is %s",rouzbeh.teacher.get(i).getGrade());
             break;
+            case
 
 
         }
