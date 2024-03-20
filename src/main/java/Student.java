@@ -1,4 +1,7 @@
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Student extends Account{
 
@@ -12,7 +15,7 @@ public class Student extends Account{
 
     String LastName;
 
-    ArrayList<Integer> Grade=new ArrayList<>();
+    ArrayList<String> Grade=new ArrayList<>();
 
     int AvregeGrade=0;
     //Constructor
@@ -55,7 +58,7 @@ public class Student extends Account{
      */
     public void setCourses(Courses courses) {
         this.courses.add(courses.getName());
-        this.plan.add(courses.Time);
+        this.plan.add(courses.getName()+" in this time "+courses.Time);
     }
 
     /**
@@ -81,40 +84,53 @@ public class Student extends Account{
      * @param grade
      */
     //TODO >find better way ?
-    public void setGrade(int grade){
-        Grade.add(grade);
+    public void setGrade(String grade,String courses){
+        Grade.add(grade+" "+courses);
     }
 
     /**
      * for Average Grade
      */
-    public void calculsaGrade()
+    private int  calculsaGrade()
     {
         AvregeGrade=0;
         for (int i=0;i<Grade.size();i++)
         {
-            AvregeGrade+= Grade.get(i);
+            String  regex ="\\d+(?=\\s\\w)";
+            Pattern pattern=  Pattern.compile(regex);
+            Matcher matcher=pattern.matcher(this.Grade.get(i));
+            AvregeGrade+=  Integer.parseInt(matcher.group());
         }
         AvregeGrade/=Grade.size();
-
+        return this.AvregeGrade;
     }
+
+
     /**
      * print grade
      */
     public void  printGrade()
     {
+
+        System.out.println("your GPA : "+this.calculsaGrade());
+        System.out.println("Lesson by lesson score \n___________________________________");
         if (Grade.size()!=0)
-         for (int x:this.Grade)
+         for (String x: this.Grade)
              System.out.println("\t"+x);
         else{
             System.out.println("NO have grade ");
         }
     }
 
-
-
-
-
+    /**
+     * Show plan of student
+     */
+    public void ShowPlan() {
+        for(String x: this.plan)
+        {
+            System.out.println(x);
+        }
+    }
 
 
 }

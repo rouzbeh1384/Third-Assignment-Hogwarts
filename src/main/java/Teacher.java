@@ -19,10 +19,6 @@ public class Teacher extends Account {
         super(usernaem,password);
         this.NameTeacher=Teacher;
     }
-
-
-
-
     /**
      * return name
      *
