@@ -104,16 +104,10 @@ A few of the things you can do with School Managment System:
 
 ## point 
 
-for frist you should create a new Assistant .
+for first you should create a new Assistant .
 for create a Assistant you should know username and password of HoGwart
-This information is in the hands of 
- 
-<a href="https://github.com/Advanced-Programming-1402/Third-Assignment-Hogwarts?tab=readme-ov-file" target="_blank">
-<img src="file:///C:/Users/Asus/Downloads/photo10439650122.jpg" style="border-radius: 50%; width: 50px; height: 50px;">
-</a>
-<a href="https://github.com/seyed0123" target="_blank">
-<img src="https://avatars.githubusercontent.com/u/121795226?v=4?" style="border-radius: 50%; width: 50px; height: 50px;">
-</a>
+This information is in the hands of [♛](https://github.com/rouzbeh1384) AND  [♚](https://github.com/rouzbeh1384) 
+first FALLOW then request for key
 
 ## Feedback
 
