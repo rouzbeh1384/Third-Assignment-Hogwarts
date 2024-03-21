@@ -97,9 +97,15 @@ A few of the things you can do with School Managment System:
 * Set grade for student 
   </div>
   <div style="flex: 50%;">
-  <img src="https://gifdb.com/images/thumb/voila-teacher-s-presentation-3d1lqmy0je7o62zi.gif" width="200">
+  <img src="https://freegifimg.com/download/teachers/187970-teacher-hq-image-free.gif" width="200">
   </div>
 </div>
+
+
+
+
+
+
 
 
 ## point 
