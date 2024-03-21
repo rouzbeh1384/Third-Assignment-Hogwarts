@@ -35,9 +35,9 @@ public class Teacher extends Account {
      * set courses
      * @param courses
      */
-    public void GetCourse(Courses courses)
+    public void GetCourse(String courses)
     {
-        this.courses.add(courses.getName());
+        this.courses.add(courses);
     }
 
     /**
