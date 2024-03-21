@@ -94,7 +94,8 @@ A few of the things you can do with School Managment System:
     
 * Get courses 
 * ****change Information**** : passWord , username
-* Set grade for student 
+* Set grade 
+* * for studenta and eche course
   </div>
   <div style="flex: 50%;">
   <img src="https://freegifimg.com/download/teachers/187970-teacher-hq-image-free.gif" width="200">
