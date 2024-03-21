@@ -91,11 +91,9 @@ public class Main {
                         }
                         if (find==true)
                         {
-                            //TODO-->check i -- or not
-                            System.out.format("hi %s ",rouzbeh.teacher.get(i).NameTeacher);
 
                             while (true) {
-                                System.out.println("1-get courses 2- list of Courses 3- Set Rate For student  4-own Rate  \n5-change username 6-change password  21-back menu");
+                                System.out.println("1-get courses 2- list of Courses 3- Set Rate For student  4-own Rate  \n10-change username 11-change password  21-back menu");
                                 int b = scanner.nextInt();
                                 if (b != 5)
                                     runTeacher(b,rouzbeh,i);
@@ -107,6 +105,7 @@ public class Main {
 
                     }
                 }
+                break;
                 case 3:
                     if (rouzbeh.assistants.isEmpty()) {
 
@@ -704,7 +703,3 @@ public class Main {
 
 
     }
-
-
-
-
