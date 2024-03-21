@@ -2,22 +2,25 @@ import java.util.ArrayList;
 
 public class Teacher extends Account {
 
-    ArrayList<Integer>Rate=new ArrayList<>();
+    ArrayList<Integer>Rate;
     private int Grade=0;
 
-    ArrayList<Courses> courses;
+    ArrayList<String> courses;
     String NameTeacher;
     //Constructor
-    public Teacher(ArrayList<Courses>courses,String Teacher ,String usernaem ,String password)
-    {
-        super(usernaem,password);
-        this.courses=new ArrayList<>(courses);
-        this.NameTeacher=Teacher;
-    }
+//    public Teacher(String,String Teacher ,String usernaem ,String password)
+//    {
+//        super(usernaem,password);
+//        this.courses=new ArrayList<>();
+//        this.NameTeacher=Teacher;
+//    }
     public Teacher(String Teacher,String usernaem ,String password)
     {
         super(usernaem,password);
         this.NameTeacher=Teacher;
+        courses=new ArrayList<>();
+        Rate=new ArrayList<>();
+
     }
     /**
      * return name
@@ -34,7 +37,7 @@ public class Teacher extends Account {
      */
     public void GetCourse(Courses courses)
     {
-        this.courses.add(courses);
+        this.courses.add(courses.getName());
     }
 
     /**

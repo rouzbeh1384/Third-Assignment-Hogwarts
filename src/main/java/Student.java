@@ -9,13 +9,13 @@ public class Student extends Account{
 
     ArrayList<String> courses;
     ArrayList<String> plan;
-
+    ArrayList<String> Grade;
 
     String Name ;
 
     String LastName;
 
-    ArrayList<String> Grade=new ArrayList<>();
+
 
     int AvregeGrade=0;
     //Constructor
@@ -24,16 +24,20 @@ public class Student extends Account{
         super(username ,password);
         this.Name=Name;
         this.LastName=LastName;
-    }
-
-    public Student(ArrayList<Courses> courses,String Name, String LastName,String username,String password )
-    {
-        super(username,password);
         this.courses=new ArrayList<>();
         this.plan=new ArrayList<>();
-        this.Name=Name;
-        this.LastName=LastName;
+        this.Grade=new ArrayList<>();
     }
+
+//    public Student(String Name, String LastName,String username,String password ,String mae )
+//    {
+//        super(username,password);
+//        this.courses=new ArrayList<>();
+//        this.plan=new ArrayList<>();
+//        this.Grade=new ArrayList<>();
+//        this.Name=Name;
+//        this.LastName=LastName;
+//    }
 
     /**
      * change name
@@ -54,11 +58,11 @@ public class Student extends Account{
 
     /**
      * set courses for student
-     * @param courses
+     * @param
      */
-    public void setCourses(Courses courses) {
-        this.courses.add(courses.getName());
-        this.plan.add(courses.getName()+" in this time "+courses.Time);
+    public void setCourses(String coursesName,String time ) {
+        this.courses.add(coursesName);
+        this.plan.add(coursesName+" in this time "+time);
     }
 
     /**
@@ -85,7 +89,8 @@ public class Student extends Account{
      */
     //TODO >find better way ?
     public void setGrade(String grade,String courses){
-        Grade.add(grade+" "+courses);
+       this.Grade.add(grade+" "+courses);
+
     }
 
     /**
@@ -114,7 +119,7 @@ public class Student extends Account{
 
         System.out.println("your GPA : "+this.calculsaGrade());
         System.out.println("Lesson by lesson score \n___________________________________");
-        if (Grade.size()!=0)
+        if (!this.Grade.isEmpty())
          for (String x: this.Grade)
              System.out.println("\t"+x);
         else{
@@ -126,9 +131,13 @@ public class Student extends Account{
      * Show plan of student
      */
     public void ShowPlan() {
+        if (!this.plan.isEmpty())
         for(String x: this.plan)
         {
             System.out.println(x);
+        }
+        else {
+            System.out.println("No courses exist");
         }
     }
 

@@ -42,7 +42,8 @@ A few of the things you can do with School Managment System:
 * ****list of**** : Student,Teacher,Courses
 * ****Add**** :Student , Teacher , Courses
 * ****Remove****: Courses , Student  
-
+* ****change Information**** : passWord , username
+* Add Question for Quiz 
 
 </div>
 <div style="flex: 50%;">
@@ -67,6 +68,7 @@ A few of the things you can do with School Managment System:
 * Remove Courses
 * See grade And GPA
 * ****change Information**** : passWord , username
+* Answer Question and increase GPA
 
   </div>
   <div style="flex: 50%;">
@@ -107,8 +109,14 @@ these are some problem in my project that   encountered
 
 3-  Grade :becaese I save the name courses I cant use it  .I create another  String Arraylist and save such as it "Grade courses" --"12 math" after that by use regex i get grade for calculate GPA  
 
-4- 
+4- remover courses :for this problem when you remove  a courses I search in all student and check their courses if they have this course .I add "this courses remove " after name courses 
 
+5-Game:Assistant can write question for student and student can solve them .
+
+6-Check the feature :this is the hardest section for this project because for test i should make a assistant after make a student and courses, and then  I can test feature of student our Teacher .
+I use try catch in function  for if conterde to a problem print "NOT successful"
+
+7-Remove :after  student remove a course it should be remove in plan So for this problem I use regex for find this courses in plan Array after find remove it   
 
 
 ## TEAM 
@@ -123,14 +131,24 @@ these are some problem in my project that   encountered
 
 ## Sponsors [![Sponsors on Open Collective](https://opencollective.com/git-point/sponsors/badge.svg)](#sponsors)
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/git-point#sponsor)]
-
- no body help i am a lone. it so sorrowful(i jock  )
+if do you want to be sponsored in my project follow my in gitHub
+ [[Become a sponsor](https://github.com/rouzbeh1384)]
 
 
 ## For learn more 
 
+<a href="https://faradars.org/courses/fvrj101-java-programming" target="_blank">
+<img src="https://www.finoit.com/wp-content/uploads/2022/10/top-java-use-cases.jpg" style="border-radius: 50%; width: 50px; height: 50px;">
+</a>
+<a href="https://regexr.com/" target="_blank">
+<img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/290842119/original/a7f047de43dc9d06e7f9c222cd11e18506d86ffa/write-regular-expression-regex-for-siem-log-sources-logrhythm.jpg
+" style="border-radius: 50%; width: 50px; height: 50px;">
 
+</a>
+<a href="https://www.tutorialspoint.com/index.htm">
+<img src="https://play-lh.googleusercontent.com/F10OOHNkeNbOf5x9DYpoihAIkLRlSMxCsPHyCErXgm0oM2gZtJwVymJIZoN59v4JJWBZ"
+style="border-radius: 50%; width: 50px; height: 50px;">
+</a>
 
 ## Acknowledgments
 

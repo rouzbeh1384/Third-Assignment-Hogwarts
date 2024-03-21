@@ -15,19 +15,20 @@ public class Main {
     public static void main(String[] args) {
 
         Hogwarts rouzbeh=new Hogwarts("rouzbeh","1234");
-        // TODO: Program starts from here
+
         runMenu(rouzbeh);
     }
 
     public static void runMenu(Hogwarts rouzbeh) {
-        // TODO: Menu will be shown here...
+
 
 
      Scanner scanner=new Scanner(System.in);
 
         while (true) {
-            System.out.print("\n\n\nhi who are you ? \n 1-Student 2-Teacher 3-Assistant\n");
+            System.out.print("\n\n\nhi who are you ? \n\n 1-Student 2-Teacher 3-Assistant 21-exit  \n");
             int a=scanner.nextInt();
+
 
             switch (a) {
                 case 1:{
@@ -37,11 +38,12 @@ public class Main {
 
                     }
                     else {
-                        System.out.println("enter username : ");
+                        System.out.println("\n\n\n\nenter username : ");
                         String userName=scanner.next();
-                        System.out.println(userName);
+
                         System.out.println("enter password : ");
                         String password=scanner.next();
+                        System.out.print("\033[H\033[2J");
                         boolean find=false;
                         int i=0;
                         for (i=0;i<rouzbeh.student.size();i++) {
@@ -56,7 +58,7 @@ public class Main {
 
                             while (true) {
                                 System.out.println("1-get courses -2 see all teacher -3 see all courses\n" +
-                                        " 4-see my courses  5-removeCourses \n6- paly game  7-grade And GPA 8-plan for this term  \n\n10-change passWord 11- change username    21-back menu\n\n");
+                                        " 4-see my courses  16-removeCourses \n6- paly game  7-grade And GPA 8-plan for this term  \n\n10-change passWord 11- change username    21-back menu\n\n");
                                 int b = scanner.nextInt();
                                 if (b != 5)
                                     runStudent(b,rouzbeh.courses,rouzbeh,i);
@@ -93,7 +95,7 @@ public class Main {
                             System.out.format("hi %s ",rouzbeh.teacher.get(i).NameTeacher);
 
                             while (true) {
-                                System.out.println("1-set courses 2- list of Courses with Student 3- Set Rate For student  4-own Rate  5-back menu");
+                                System.out.println("1-get courses 2- list of Courses 3- Set Rate For student  4-own Rate  \n5-change username 6-change password  21-back menu");
                                 int b = scanner.nextInt();
                                 if (b != 5)
                                     runTeacher(b,rouzbeh,i);
@@ -107,7 +109,7 @@ public class Main {
                 }
                 case 3:
                     if (rouzbeh.assistants.isEmpty()) {
-                        System.out.format(String.valueOf(rouzbeh.assistants.size()));
+
                         System.out.println("NO assistant exist");
                         System.out.println("are you a new  Assistant ? enter username  password of HOGWARTS ");
 
@@ -123,16 +125,16 @@ public class Main {
                             String pass =scanner.next();
 
                             rouzbeh.add_Assistant(user,pass);
-                            System.out.format(String.valueOf(rouzbeh.assistants.size()));
 
                         }
                         break;
                     }
                     else
                     {
-                        System.out.println("enter username : ");
+                        System.out.print("\033[H\033[2J");
+                        System.out.println("\n\n\n\nenter username : ");
                         String userName=scanner.next();
-                        System.out.println(userName);
+
                         System.out.println("enter password : ");
                         String password=scanner.next();
                         boolean find=false;
@@ -149,7 +151,7 @@ public class Main {
                             while (true) {
                                 System.out.println("1-list of student 2-list od teacher 3-list of courses\n 4-" +
                                         "create a new Student 5- add teacher 6-add courses\n 7-delete a courses 8-delete student " +
-                                        "\n 10-change password 11-change username \n\n   21-back menu\n\n");
+                                        "\n 10-change password 11-change username \n12-set Question \n\n   21-back menu\n\n");
                                 int b = scanner.nextInt();
                                 if (b != 0)
                                    runAssistant(b,i,rouzbeh);
@@ -160,6 +162,11 @@ public class Main {
 
 
                     }
+
+                    break;
+                case 21:
+                    System.exit(0);
+                    break;
             }
         }
 
@@ -187,10 +194,11 @@ public class Main {
                     }
                     int NumberCourses = get.nextInt();
                     try {
-//                        rouzbeh.student.get(i).setCourses(courses.get(NumberCourses-1));
-                        Courses courses1=new Courses();
-                        courses1=courses.get(NumberCourses-1);
-                        rouzbeh.student.get(i).setCourses(courses1);
+
+                        String coursesName=courses.get(NumberCourses-1).getName();
+                        String time =courses.get(NumberCourses-1).Time;
+
+                        rouzbeh.student.get(i).setCourses(coursesName,time);
                         System.out.println(" successful ");
                     }
                     catch (Exception e) {System.out.println("Not successful ");}
@@ -204,7 +212,7 @@ public class Main {
                     System.out.format("%d - %s", conter, x.NameTeacher);
                 }
             }
-            break;
+                 break;
             case 3: {
                 for (Courses x : rouzbeh.courses) {
                     conter = 0;
@@ -212,12 +220,13 @@ public class Main {
                     System.out.format("\n%d - %s\n", conter, x.getName());
                 }
             }
-            break;
+                 break;
             case 4: {
                 try {
                     System.out.println("\n\n\tyour courses\n\n");
                     conter=0;
                     for (String  x : rouzbeh.student.get(i).courses) {
+                        conter++;
                         System.out.format("\t%d --> %s\n",conter,x);
                     }
 
@@ -226,22 +235,46 @@ public class Main {
                 {
                     System.out.println("Not Successful");
                 }
-            }
             break;
-            case 5: {
+            }
+
+            case 16:
+            {
+                String remove="";
+
+                System.out.println("if  you want to remove one of these courses enter Name  \n\n");
                 try {
-                    System.out.println("if  you want to remove one of these courses enter ID's \n\n");
-                    conter=0;
+                    System.out.println("if  you want to remove one of these courses enter Name  \n\n");
+                    conter = 0;
                     for (String x : rouzbeh.student.get(i).courses) {
                         conter++;
-                        System.out.format("\t%d --> %s\n",conter,x);
+                        System.out.format("\t%d --> %s\n", conter, x);
                     }
+                }catch (Exception e) {
+                    System.out.println("error in print courses");
+                }
+                try {
                     Scanner scanner=new Scanner(System.in);
-                   String remove= scanner.next();
+                   remove= scanner.next();
                     rouzbeh.student.get(i).courses.remove(remove);
+                    System.out.println("Successful");
                 }catch (Exception e)
                 {
-                    System.out.println("Not Successful");
+                    System.out.println("erroe in get removing ");
+                }
+                try {
+
+                    int con=0;
+                   for(String x:rouzbeh.student.get(i).plan) {
+                    if (x.contains(remove))
+                    {
+                        rouzbeh.student.get(i).plan.remove(con);
+                        break;
+                    }
+                    con++;
+                   }
+                }catch (Exception e){
+                System.out.println("Not remove for plan ");
                 }
             }
             break;
@@ -251,40 +284,44 @@ public class Main {
                  System.out.println("you are in a game for fun please try and answer correct \nif answer correct all of question your GPA increase 0.5 point  ");
                  System.out.println("Start");
                  int nmber =0;
+                 int a=0;
+
+
                  try {
+                     for ( a = 0; a < rouzbeh.assistants.get(0).QuestionANDans.size(); a++) {
 
+                        System.out.print("Q "+(a+1)+" ");
+                        int Q=  rouzbeh.assistants.get(0).QuestionANDans.get(a).indexOf("-");
+                        System.out.println( rouzbeh.assistants.get(0).QuestionANDans.get(a).substring(0,Q)+": ");
 
-                     for (int a = 0; a < rouzbeh.assistants.get(0).QuestionANDans.size(); a++) {
-                         String regex = "(.+?)-->";
-                         Pattern pattern = Pattern.compile(regex);
-                         Matcher matcher = pattern.matcher(rouzbeh.assistants.get(0).QuestionANDans.get(a));
-                         System.out.println(matcher.group());
+                        System.out.print("enter ans: ");
                          Scanner scanner = new Scanner(System.in);
-                         System.out.println("enter ans :");
-                         String ans = scanner.next();
-                         if (rouzbeh.assistants.get(0).QuestionANDans.get(a).equals(matcher.group() + ans)) {
+                         String  ans = scanner.next();
+                         if (rouzbeh.assistants.get(0).QuestionANDans.get(a).contains(ans)) {
                              System.out.println("correct ANSEWR");
-                         }
-                         nmber++;
-                     }
-                     if (nmber == rouzbeh.assistants.get(0).QuestionANDans.size()) {
-                         {
-                             rouzbeh.student.get(i).AvregeGrade++;
+                             nmber++;
                          }
 
                      }
-                 }catch (Exception e)
-                 {
-                     System.out.println("NOT successful");
-                 }
-
-
+                     if (nmber==rouzbeh.assistants.get(0).QuestionANDans.size())
+                     {
+                        rouzbeh.student.get(i).AvregeGrade++;
+                         System.out.println("Successful");
+                     }
+                 }catch(Exception w){
+                        System.out.println("No ");
+                     }
 
             }
+            break;
             case 7:
             {
                 try {
-                    rouzbeh.student.get(i).printGrade();
+                    int number=0;
+                    for (String x:rouzbeh.student.get(i).Grade) {
+                       System.out.println(rouzbeh.student.get(i).Grade.get(number));
+                        number++;
+                    }
                 }catch (Exception e)
                 {
                     System.out.println("Not successful ");
@@ -296,11 +333,11 @@ public class Main {
                 System.out.println("\n\tthis you plan for this term \n\n");
                 System.out.println("\n________________________________________________________\n\n");
                 //TODO sort plan
+
                 rouzbeh.student.get(i).ShowPlan();
             }
             break;
-            case 9:
-            {
+            case 9: {
                 try {
                     String ans = JOptionPane.showInputDialog(null, "enter last Passwo word ", "", JOptionPane.QUESTION_MESSAGE);
                     if (rouzbeh.student.get(i).validatePassword(ans)) {
@@ -313,8 +350,7 @@ public class Main {
                 }
             }
             break;
-            case 10:
-            {
+            case 10: {
                 try {
                     String ans = JOptionPane.showInputDialog(null, "Enter  Passwo word ", "", JOptionPane.QUESTION_MESSAGE);
                     if (rouzbeh.student.get(i).validatePassword(ans)) {
@@ -327,7 +363,6 @@ public class Main {
                 }
             }
             break;
-
             case 21:
                 runMenu(rouzbeh);
             break;
@@ -375,17 +410,29 @@ public class Main {
              * set grade for Student
              */
             case 3:{
+                int conter ;
                 for (Student x : rouzbeh.student) {
-                    int conter = 0;
+                    conter=0;
                     conter++;
                     System.out.format("%d - %s", conter, x.getName());
                 }
                 System.out.format("enter ID of student (number )\n");
                 int NumberCourses = get.nextInt();
+
+
+                for (String x : rouzbeh.student.get(NumberCourses).courses) {
+                    conter = 0;
+                    conter++;
+                    System.out.format("%d - %s", conter, x);
+                }
+                System.out.println("enter number of curses");
+                String Cor= get.next();
+
                 System.out.println("enter grade : ");
                 int Grade = get.nextInt();
-                //TODO for enter courses
-                rouzbeh.student.get(NumberCourses-1).setGrade(String.valueOf(Grade),"");
+
+
+                rouzbeh.student.get(NumberCourses-1).setGrade(String.valueOf(Grade),Cor);
                 System.out.println("successful ");
 
             }
@@ -393,7 +440,44 @@ public class Main {
             case 4:
                 System.out .format("your Grade is %s",rouzbeh.teacher.get(i).getGrade());
             break;
-            case
+            case 10:
+            {
+                System.out.println("enter  password ");
+                Scanner scanner3=new Scanner(System.in);
+                String pass = scanner3.next();
+                try {
+                    if (rouzbeh.teacher.get(i).validatePassword(pass)) {
+                        System.out.println("enter new user name ");
+                        String newusername = scanner3.next();
+                        rouzbeh.teacher.get(i).changeUsername(newusername);
+                        System.out.println("\nSuccessful");
+                    }
+                }catch (Exception e)
+                {
+                    System.out.println("\nNot Successful");
+                }
+            }
+            break;
+            case 11:
+            {
+                System.out.println("enter  password ");
+                Scanner scanner3=new Scanner(System.in);
+                String pass = scanner3.next();
+                try {
+                    if (rouzbeh.teacher.get(i).validatePassword(pass)) {
+                        System.out.println("enter new password ");
+                        String newusername = scanner3.next();
+                        rouzbeh.teacher.get(i).changePassword(newusername);
+                        System.out.println("\nSuccessful");
+                    }
+                }catch (Exception e)
+                {
+                    System.out.println("\nNot Successful");
+                }
+            }
+
+
+
 
 
         }
@@ -448,7 +532,7 @@ public class Main {
                 System.out.println("enter Usename ");
                 String username = scanner.next();
                 try {
-//                    hogwarts.assistants.get(i).addStudent(name, LastName, username, "1234");
+
                     Student newStudent = new Student(name, LastName, username, "1234");
                     hogwarts.student.add(newStudent);
                     System.out.println("successful");
@@ -594,7 +678,19 @@ public class Main {
                 }
             }
             break;
-
+            case 12:{
+                //TODO->game 7
+                System.out.println("eneter question ");
+                Scanner scanner1=new Scanner(System.in);
+                String Q=scanner1.nextLine();
+                String ans=scanner1.next();
+                try {
+                    hogwarts.assistants.get(i).setQuestion(Q, ans);
+                }catch (Exception E) {
+                    System.out.println("Not Successful to set Question ");
+                }
+            }
+            break;
             case 21:
                 System.out.println("successful");
                 runMenu(hogwarts);
