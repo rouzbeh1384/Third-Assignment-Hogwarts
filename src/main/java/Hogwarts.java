@@ -20,26 +20,10 @@ public class Hogwarts extends Account{
         student=new ArrayList<>();
     }
 
-
-    // TODO: Define Functionalities
-    public void viewAllTeachers() {
-
-    }
-
-    public void viewAllStudents() {
-
-    }
-
-    public void viewAllCourses() {
-
-    }
-
     public void add_Assistant(String Name ,String password)
     {
         Assistant assistant=new Assistant(Name,password,this.student,this .teacher,this.courses);
         this.assistants.add(assistant);
-//        System.out.format(String.valueOf(this.assistants.size()));
-//        System.out.println("successful");
     }
     public boolean CheckPassword(String userName,String passWord)
     {

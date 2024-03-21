@@ -58,7 +58,7 @@ public class Main {
 
                             while (true) {
                                 System.out.println("\n1-get courses -2 see all teacher -3 see all courses\n" +
-                                        " 4-see my courses  16-removeCourses \n6- paly game  7-grade And GPA 8-plan for this term  \n\n10-change passWord 11- change username    21-back menu\n\n");
+                                        " 4-see my courses  16-removeCourses \n6- paly game  7-grade And GPA 8-plan for this term  \n\n9-change passWord 10- change username    21-back menu\n\n");
                                 int b = scanner.nextInt();
                                 if (b != 5)
                                     runStudent(b,rouzbeh.courses,rouzbeh,i);
@@ -336,28 +336,37 @@ public class Main {
             }
             break;
             case 9: {
+                System.out.println("enter  password ");
+                Scanner scanner3=new Scanner(System.in);
+                String pass = scanner3.next();
                 try {
-                    String ans = JOptionPane.showInputDialog(null, "enter last Passwo word ", "", JOptionPane.QUESTION_MESSAGE);
-                    if (rouzbeh.student.get(i).validatePassword(ans)) {
-                        String ans1 = JOptionPane.showInputDialog(null, "enter new Passwo word ", "", JOptionPane.INFORMATION_MESSAGE);
-                        rouzbeh.student.get(i).changePassword(ans1);
+                    if (rouzbeh.teacher.get(i).validatePassword(pass)) {
+                        System.out.println("enter new password ");
+                        String newusername = scanner3.next();
+                        rouzbeh.teacher.get(i).changePassword(newusername);
+                        System.out.println("\nSuccessful");
                     }
                 }catch (Exception e)
                 {
-                    System.out.println("Not successful");
+                    System.out.println("\nNot Successful");
                 }
+
             }
             break;
             case 10: {
+                System.out.println("enter  password ");
+                Scanner scanner3=new Scanner(System.in);
+                String pass = scanner3.next();
                 try {
-                    String ans = JOptionPane.showInputDialog(null, "Enter  Passwo word ", "", JOptionPane.QUESTION_MESSAGE);
-                    if (rouzbeh.student.get(i).validatePassword(ans)) {
-                        String ans1 = JOptionPane.showInputDialog(null, "enter new username ", "", JOptionPane.INFORMATION_MESSAGE);
-                        rouzbeh.student.get(i).changePassword(ans1);
+                    if (rouzbeh.student.get(i).validatePassword(pass)) {
+                        System.out.println("enter new user name ");
+                        String newusername = scanner3.next();
+                        rouzbeh.student.get(i).changeUsername(newusername);
+                        System.out.println("\nSuccessful");
                     }
                 }catch (Exception e)
                 {
-                    System.out.println("NOT Successful");
+                    System.out.println("\nNot Successful");
                 }
             }
             break;
