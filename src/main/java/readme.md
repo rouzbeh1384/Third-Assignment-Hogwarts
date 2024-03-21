@@ -143,8 +143,7 @@ I use try catch in function  for if conterde to a problem print "NOT successful"
 
 8-set grade :after teacher choose the student show the courses that student had then choose the course and enter grade 
 
-9-i show the plan of courses that student had 
-
+9-i show the plan of courses that student had.
 
 
 ## TEAM 
@@ -181,6 +180,8 @@ style="border-radius: 50%; width: 50px; height: 50px;">
 ## Acknowledgments
 
 Thanks to [JetBrains](https://www.jetbrains.com) for supporting us with a [free Open Source License](https://www.jetbrains.com/buy/opensource).
+
+
 I appreciate Mr.Seyed for being with me in this way.
 
 
