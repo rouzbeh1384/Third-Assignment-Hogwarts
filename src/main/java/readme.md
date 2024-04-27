@@ -8,14 +8,12 @@
 
 <p align="left"> 
     University in Tehran, Iran 
-<div align="center">
-<img src="nice.png" width="50%">
-
-score: 100+20 / 100
-</div>
+<html>
+<body>
 <h2></h2>
 <img src="https://www.w3schools.com/html/programming.gif" alt="Computer man" style="width:48px;height:48px;">
-
+</body>
+</html>
 
 ## Table of Contents
 
