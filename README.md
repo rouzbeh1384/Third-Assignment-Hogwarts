@@ -1,141 +1,196 @@
-# Third Assignment: Hogwarts School Management System 🧙‍♂️
 
-Welcome to your third Advanced Programming (AP) assignment, where you'll embark on the magical journey of building the Hogwarts School Management System. This project aims to streamline administrative tasks at Hogwarts School of Witchcraft and Wizardry, offering a comprehensive platform for managing teachers, students, and courses within the esteemed institution.
 
-## Prerequisites ✅
+<h1 align="center"> (School / University) management System </h1> <br>
+  <img src = https://www.educationunlimited.com/blog/wp-content/uploads/2019/08/Webp.net-compress-image.jpg">
 
-Before diving into the enchanting world of Hogwarts, ensure you have the following prerequisites installed on your magical workstation:
+<p align="left">
+    Shahid Beheshti University
 
-- Java 21
-- Git
-- Gradle as a package manager
+<p align="left"> 
+    University in Tehran, Iran 
+<div align="center">
+<img src="nice.png" width="50%">
 
-## Objectives ✏️
+score: 100+20 / 100
+</div>
+<h2></h2>
+<img src="https://www.w3schools.com/html/programming.gif" alt="Computer man" style="width:48px;height:48px;">
 
-By completing this assignment, you will:
 
-- Reinforce your understanding of Object-Oriented Programming (OOP) principles and apply them effectively (It is highly recommended to read 'Different patterns to design your classes' in the Resource section).
-- Gain familiarity with concepts such as encapsulation, inheritance, and polymorphism.
-- Hone your skills in designing robust and scalable classes.
-- Learn to manage and track changes in your project using Git.
+## Table of Contents
 
-## Tasks 📝
+- [Introduction](#introduction)
+- [Features](#features)
+- [Feedback](#feedback)
+- [Contributors](#contributors)
+- [Build Process](#build-process)
+- [problem](#problem)
+- [Sponsors](#sponsors-)
+- [Some point](#point-)
+- [Acknowledgments](#acknowledgments)
 
-1. Fork this repository and clone it to your local machine.
-2. Create a new branch named `develop` and switch to it. All development should be done in this branch.
-3. **Complete or create** the following classes, ensuring they meet the specified requirements outlined in the "Designing the Classes" section.
-4. Implement an interactive menu in the command line's `runMenu()` function of the Main class, enabling users to utilize the program's functionalities seamlessly.
-5. Write a comprehensive report in Markdown format, detailing the tasks you've completed and any challenges encountered. Include UML diagrams of the classes you've developed. For example, a UML diagram for account class is as follows:
 
-	<img src="./Account.png" alt="Image" width="200" height="150">
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-6. Commit your changes and push them to your GitHub repository.
-7. Submit a pull request from your `develop` branch to your `main` branch. Your mentor will review the pull request and merge it upon approval.
+## Introduction
 
-## Designing the Classes 💡
+View repository and user information, control your notifications and even manage your issues and pull requests.
+it useful for manage School or university .
 
-In this section, the functionalities of each user type are explained. Your task is to design the classes to ensure the program possesses the specified functionality. **Ensure that classes are designed with proper encapsulation**, where internal state is hidden and accessed only through well-defined methods. One way to do it is to define getter and setter methods.
 
-### Teacher class:
+**Available for windows .**
 
-Teachers should be able to manage courses, score students, and access valuable information to enhance their teaching experience on the platform.
+<p align="center">
+</p>
 
-- **Sign Up**: Teachers can sign up by following these steps:
-  - Request an account by contacting the assistant.
-  - Upon receiving access, provide necessary information to complete the sign-up process.
-- **Take Courses**: Teachers can explore and enroll in courses they wish to teach, displayed on their dashboard.
-- **Score Students**: Teachers can evaluate students by navigating to the scoring section on their dashboard, selecting the appropriate course, and entering scores for each student.
-- **View Courses List**: Access a comprehensive list of courses they teach for an overview of current teaching assignments.
-- **View Course's List of Students**: Check the list of students enrolled in specific courses to monitor their progress.
-- **Show Teacher’s Score on the Menu**: Conveniently monitor their teaching performance by checking their score displayed on the menu.
+## Features
 
-### Assistant class:
+A few of the things you can do with School Managment System:
 
-The assistant serves as an administrative tool, allowing administrators to create accounts, manage users, courses, and perform various administrative tasks to ensure smooth operation of the platform.
+### Assistant 
 
-- **Sign Up**: Only administrators (other assistants) can create new assistant accounts. Follow these steps to create a new assistant account:
-  1. Access the admin panel.
-  2. Utilize the provided tools to create a new assistant account.
-- **Login**: Admins can log in to their assistant accounts using their credentials.
-- **Remove a Teacher/Student**: Assistants possess the authority to remove teachers or students from the platform:
-  1. Navigate to the management section in the dashboard.
-  2. Select the option to remove a teacher or student.
-  3. Confirm the action to remove the selected user.
-- **View Courses and Their List of Students**: Explore the list of courses available on the platform and view enrolled students for each course.
-- **Check Student/Teacher Profile**: Access detailed profiles for both students and teachers for administrative purposes.
-- **Create a Course**: Follow steps to create a new course on the platform:
-  1. Navigate to the course creation section in the dashboard.
-  2. Provide necessary details for the new course.
-  3. Confirm and save the course.
+<div style="display: flex;">
+  <div style="flex: 80%; text-align: left;">
 
-### Student class:
+* ****list of**** : Student,Teacher,Courses
+* ****Add**** :Student , Teacher , Courses
+* ****Remove****: Courses , Student  
+* ****change Information**** : passWord , username
+* Add Question for Quiz 
 
-Students can perform various actions within the Hogwarts School Management System, including taking courses, viewing teachers, and participating in sorting quizzes.
+</div>
+<div style="flex: 50%;">
+<img src="https://gifdb.com/images/thumb/like-a-boss-bulldog-gpuvvb6wr1kjuvbv.gif" width="200">
+</div>
+</div>
 
-- **Taking Courses**: Enroll in courses by taking them.
-- **Viewing All Courses Taken**: View a list of all courses taken.
-- **Viewing All Teachers**: Access a list of all teachers taken courses with.
-- **Taking a Sorting Quiz**: Take a quiz to determine their Hogwarts House (Gryffindor, Hufflepuff, Ravenclaw, or Slytherin).
 
-### Hogwarts class:
 
-Serving as a central management system for Hogwarts School of Witchcraft and Wizardry, the Hogwarts class facilitates various actions for teachers, students, and administrators.
 
-- Managing lists of teachers, courses, admins, and students from different Houses.
-- Rating teachers and leaving comments for them.
-- Viewing all teachers, students, and courses.
-- Viewing individual student profiles.
-- Requesting courses and submitting scores for students.
-- Requesting courses as a teacher.
-- Rating teachers and leaving comments for them as a student.
-- Retrieving course information via UUID.
 
-### Course class:
 
-Representing specific courses offered at Hogwarts School of Witchcraft and Wizardry, the Course class is capable of setting course information.
 
-- **Setting Course Information**:
-  - Store the title of the course.
-  - Assign a unique identifier to each course (courseID), represented by a UUID.
-  - Maintain a list of students enrolled in the course (students).
-  - Track the teacher assigned to teach the course (teacher).
 
-## Evaluation 📃
+## Student
+<div style="display: flex;">
+  <div style="flex: 80%; text-align: left;">
 
-Your submission will be evaluated based on the following criteria:
+* Get Courses
+* ****See list of**** :courses , Teacher
+* See own courses
+* Remove Courses
+* See grade And GPA
+* ****change Information**** : passWord , username
+* Answer Question and increase GPA
 
-- Error-free compilation and execution of your code.
-- Efficient usage of OOP concepts such as polymorphism, encapsulation, and inheritance.
-- Proper implementation of Java access modifiers and adherence to OOP principles.
-- Well-written report detailing the tasks completed, including UML diagrams of the designed classes.
-- Clear code structure, readability, thorough commenting, and adherence to clean code principles.
+  </div>
+  <div style="flex: 50%;">
+  <img src="https://gifdb.com/images/thumbnail/boy-student-hating-school-pfjzfwwvgmw9dmft.webp" width="200">
+  </div>
+</div>
 
-**Note: Usage of ChatGPT or any other AI generative model to complete any part of this assignment is strictly prohibited. Violation will result in a score of 0 without warnings.**
+## Teacer
 
-## Bonus Objectives ✒️
+<div style="display: flex;">
+  <div style="flex: 80%; text-align: left;">
+    
+* Get courses 
+* ****change Information**** : passWord , username
+* Set grade 
+* * for studenta and eche course
+  </div>
+  <div style="flex: 50%;">
+  <img src="https://freegifimg.com/download/teachers/187970-teacher-hq-image-free.gif" width="200">
+  </div>
+</div>
 
-As an additional challenge, consider implementing the following bonus objectives:
 
-- **Sort Course's List of Students**: Allow sorting of the list of students within a course based on specific criteria.
-- **View Weekly Schedule**: Implement functionality for students to view their weekly schedule (optional).
-- **Utilize Abstract Classes and Interfaces**: Explore the usage of abstract classes and interfaces in your Java implementation to achieve better code structure and design.
-- Enhance your classes by incorporating additional attributes and methods to enrich their functionality and expand their capabilities.
-- Provide a simple GUI (Graphical User Interface) for your project. The recommended library to do so is Javafx. JavaFX empowers developers to create dynamic and engaging user interfaces for their Java applications, offering a modern and versatile platform for building cross-platform desktop, web, and mobile applications. In the event that you encounter any difficulties adding JavaFX to your project, you have the option to create a separate repository and develop your project there.
 
-## Submission ⌛
 
-The deadline for submitting your code is Tuesday, March 19 (29th of Esfand).
 
-## Resources 📚
 
-For assistance with this assignment, you may refer to the following resources:
 
-🔗 [Different patterns to design your classes](https://refactoring.guru/design-patterns/catalog)
 
-🔗 [Visual Paradigm for drawing UML diagrams](https://www.visual-paradigm.com/)
+## point 
 
-🔗 [Types of UML Diagrams](https://www.lucidchart.com/blog/types-of-UML-diagrams)
+for first you should create a new Assistant .
+for create a Assistant you should know username and password of HoGwart
+This information is in the hands of [♛](https://github.com/rouzbeh1384) AND  [♚](https://github.com/rouzbeh1384) 
+first FALLOW then request for key
 
-🔗 [Guide to UUID in Java](https://www.baeldung.com/java-uuid)
+## Feedback
 
-Additionally, you may explore online tutorials, forums, and documentation for further guidance on
+I am a **dictator**, that's why you can't say bad things. I had little time to write this program, I will deliver better in the future.
+
+my grade for this Assignment should upper 100000.😅
+
+********just for fun******** 
+## Contributors
+just God :)
+## Build Process
+
+I first came and made a plan for the project so that I know what I need and what I should do, after that I started writing. I did every single class.
+After some places where I had to change the road, I did so
+
+## problem
+these are some problem in my project that   encountered   
+
+1-  set courses: for student my first opinion is saving  a class of  courses in student  so this thing dont work if my plan has time I will check it .by the way i save name of courses in Array list that type is string   
+
+2-  game Hogwarts :I have not seen haripater yet so i dont know about game my opinin is a onther game that ask question and if correct answer increase a grade of student 
+
+3-  Grade :becaese I save the name courses I cant use it  .I create another  String Arraylist and save such as it "Grade courses" --"12 math" after that by use regex i get grade for calculate GPA  
+
+4- remover courses :for this problem when you remove  a courses I search in all student and check their courses if they have this course .I add "this courses remove " after name courses 
+
+5-Game:Assistant can write question for student and student can solve them .
+
+6-Check the feature :this is the hardest section for this project because for test i should make a assistant after make a student and courses, and then  I can test feature of student our Teacher .
+I use try catch in function  for if conterde to a problem print "NOT successful"
+
+7-Remove :after  student remove a course it should be remove in plan So for this problem I use regex for find this courses in plan Array after find remove it   
+
+8-set grade :after teacher choose the student show the courses that student had then choose the course and enter grade 
+
+9-i show the plan of courses that student had.
+
+
+## TEAM 
+
+<a href="https://github.com/Advanced-Programming-1402/Third-Assignment-Hogwarts?tab=readme-ov-file" target="_blank">
+  <img src="file:///C:/Users/Asus/Downloads/photo10439650122.jpg" style="border-radius: 50%; width: 50px; height: 50px;">
+</a>
+<a href="https://github.com/seyed0123" target="_blank">
+  <img src="https://avatars.githubusercontent.com/u/121795226?v=4?" style="border-radius: 50%; width: 50px; height: 50px;">
+</a>
+
+
+## Sponsors [![Sponsors on Open Collective](https://opencollective.com/git-point/sponsors/badge.svg)](#sponsors)
+
+if do you want to be sponsored in my project follow my in gitHub
+ [[Become a sponsor](https://github.com/rouzbeh1384)]
+
+
+## For learn more 
+
+<a href="https://faradars.org/courses/fvrj101-java-programming" target="_blank">
+<img src="https://www.finoit.com/wp-content/uploads/2022/10/top-java-use-cases.jpg" style="border-radius: 50%; width: 50px; height: 50px;">
+</a>
+<a href="https://regexr.com/" target="_blank">
+<img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/290842119/original/a7f047de43dc9d06e7f9c222cd11e18506d86ffa/write-regular-expression-regex-for-siem-log-sources-logrhythm.jpg
+" style="border-radius: 50%; width: 50px; height: 50px;">
+
+</a>
+<a href="https://www.tutorialspoint.com/index.htm">
+<img src="https://play-lh.googleusercontent.com/F10OOHNkeNbOf5x9DYpoihAIkLRlSMxCsPHyCErXgm0oM2gZtJwVymJIZoN59v4JJWBZ"
+style="border-radius: 50%; width: 50px; height: 50px;">
+</a>
+
+## Acknowledgments
+
+Thanks to [JetBrains](https://www.jetbrains.com) for supporting us with a [free Open Source License](https://www.jetbrains.com/buy/opensource).
+
+
+I appreciate Mr.Seyed for being with me in this way.
+
+
